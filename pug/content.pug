@@ -1,0 +1,160 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title content
+        link(rel="stylesheet", href="../css/content.css")
+        script(src='https://www.gstatic.com/firebasejs/5.5.1/firebase.js')
+        script(src="../js/login.js")
+        script(src="../js/content.js" defer)
+        script(src="../js/all.js" defer)
+        
+        
+    body 
+        .header 
+            #headerNav
+                img.logo(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png", alt="")
+                nav
+                    button#search-button(type="button") 探索
+                    button#skilltree-button(type="button") 技能樹
+                    button#header-login(type="button") 登入
+                    img#click-glass(src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png", alt="")
+            #loginContainer 
+                .loginBackground 
+                    .loginBox
+                        img.login(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-2.png", alt="") 
+                        form
+                            input#email(type="email" name="email" placeholder="Email" required)
+                            input#password(type="password" name="password" placeholder="******" required)
+                        span.forgetPW 忘記密碼？
+                        .blueBtn
+                            button#register 註冊
+                            button#login 登入
+                        button#loginGmail log in with Gmail
+                .remindBackground
+                    .remindBox
+                        .header Remind 
+                        .content 
+                        button.okButton OK 
+                        button.noButton No
+            #search-box
+                span SEARCH
+                form#searchBar(action="") 
+                    input#search(type='search' placeholder='搜尋課程名稱、所在城市或簡介' data-search)
+                    img.voice(src="https://frankyeah.github.io/Front-Enter/images/microphone.svg", alt="")
+                    img.search-glass(src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png")
+
+            #black-box
+
+        #nav-upper
+            img.nav-upper-background(src="", alt="")
+            .className 
+            .test-go.test-go-container
+                img.test-go-round(src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png")
+            .testContainer 
+                .testBackground 
+                    .boxContainer  
+                        .testHeader 測驗說明
+                        .testIntro 點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。
+                        .startBtn 開始測驗
+                        .testQuestion 
+                        .testNumber 
+                        ul#testList  
+                            li 
+                                input#1.answer(type='radio' name='answer') 
+                                label#1-text(for='1') 
+                            li
+                                input#2.answer(type='radio' name='answer')
+                                label#2-text(for='2')                            
+                            li
+                                input#3.answer(type='radio' name='answer')
+                                label#3-text(for='3')                            
+                            li 
+                                input#4.answer(type='radio' name='answer')
+                                label#4-text(for='4') 
+                            li 
+                                input#5.answer(type='radio' name='answer')
+                                label#5-text(for='5') 
+                        button#newURL 
+                        .pieContainer
+                            .pieChart
+                                .pieNum
+
+        .navCenter
+            .navCenterLeft 
+                .leftImg.leftImgOne          
+                .leftImg.leftImgTwo  
+                .leftImg.leftImgThree 
+                .leftImg.leftImgFour        
+                .leftImg.leftImgFive
+                .popUpImgContainer
+                    .popUpImgBackgroud
+                        .TriLeft
+                            .popUpTriLeft
+                        .popUpImg
+                        .TriRight
+                            .popUpTriRight
+
+                    
+
+            .navCenterRight 
+                .mainContent 
+                    #mainContentText
+                        #mainTitle JavaScript 程式設計再進階
+                        p <br>飛肯設計學苑是國內知名前端學校，教導各式前端技術，其中的JavaScript 是目前最熱門的程式語言之一，不管在前端或是後端都有一席之地，因此徹底深入了解這個語言核心是絕對有必要的。<br><br>本課程的教學將分為「語法介紹」、「語言特性」、「寫作風格」、「物件導向」、「物件繼承」及「設計模式」六大教學主題。使用原生方法深入了解，從語法介紹與語言特性的基礎概念重新開始，並且了解 JavaScript 不同於其它程式語言獨特的一面。再談到寫作風格與物件導向，保持良好的開發習慣並且善用物件導向的概念進行開發，在開發的過程中更能夠減少程式發生問題。了解物件繼承的特性與實作方法，讓程式碼在大型架構底下更容易維護。最後透過各種不同的設計模式解決複雜架構會遇到的問題。<br><br>學習 JavaScript OOP 物件導向就像是開手排車一樣，更能充分的了解原理與技巧，就如同享受開手排車的駕馭感與操控樂趣。<br><br>另一門前端必學的語言－CSS，層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表，一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。目前最新版本是CSS2.1，為W3C的推薦標準。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。<br><br>CSS不能單獨使用，必須與HTML或XML一起協同工作，為HTML或XML起裝飾作用。本文主要介紹用於裝飾HTML網頁的CSS技術。其中HTML負責確定網頁中有哪些內容，CSS確定以何種外觀（大小、粗細、顏色、對齊和位置）展現這些元素。CSS可以用於設定頁面布局、設定頁面元素樣式、設定適用於所有網頁的全局樣式。CSS可以零散地直接添加在要應用樣式的網頁元素上，也可以集中化內建於網頁、連結式引入網頁以及匯入式引入網頁。
+                    #boxTitle 
+                        p 整理
+                        .underline
+                    #boxTable
+                        .row 
+                            .row-left 城市
+                            .row-right.city
+                        .row
+                            .row-left 班制
+                            .row-right.classType
+                        .row
+                            .row-left 教法
+                            .row-right.teachType 
+                        .row
+                            .row-left 天數
+                            .row-right.totalDay 
+                        .row
+                            .row-left 週時
+                            .row-right.weekHour 
+                        .row
+                            .row-left 技術
+                            .row-right.tech
+                        .row
+                            .row-left 信箱
+                            .row-right.mail 
+                        .row
+                            .row-left 電話
+                            .row-right.phone 
+                        
+
+        .top
+            #topwrap(onclick="toTop()") 
+                .top-arrow
+                .top-icon 
+                    h3 TOP
+
+        .footer
+            .footer-info
+                a(href="contact.html") 聯絡
+                .num 0918-120-210
+                .mail wendy950210@gmail.com
+            .fb-line
+                a(href="https://www.facebook.com/WendyHsinYun" target="_blank") 
+                    img.fb(src="https://frankyeah.github.io/Front-Enter/images/new-facebook-blue.svg")
+                a(href="https://line.me/ti/p/OBVsxhRD9r" target="_blank") 
+                    img.line(src="https://frankyeah.github.io/Front-Enter/images/FE_line.png")
+
+
+        #animation
+            img#animation-logo(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png", alt="")
+            #animation-blue
+
+
+// pug -w ./pug -o ./html -P

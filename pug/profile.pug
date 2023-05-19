@@ -1,0 +1,226 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title 會員中心
+        link(rel="stylesheet", href="../css/profile.css")
+        script(src='https://www.gstatic.com/firebasejs/5.5.1/firebase.js')
+        script(src="../js/login.js")
+        script(src="../js/all.js" defer)
+        script(src="../js/profile.js" defer)
+        script(src="../js/article.js" defer)
+        
+    body 
+        .header 
+            #headerNav
+                img.logo(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png", alt="")
+                nav
+                    button#search-button(type="button") 探索
+                    button#skilltree-button(type="button") 技能樹
+                    button#header-login(type="button") 登入
+                    img#click-glass(src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png", alt="")
+            #loginContainer 
+                .loginBackground 
+                    .loginBox
+                        img.login(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-2.png", alt="") 
+                        form#login
+                            input#email(type="email" name="email" placeholder="Email" required)
+                            input#password(type="password" name="password" placeholder="******" required)
+                        span.forgetPW 忘記密碼？
+                        .blueBtn
+                            button#register 註冊
+                            button#login 登入
+                        button#loginGmail log in with Gmail
+                .remindBackground
+                    .remindBox
+                        .header Remind 
+                        .content 
+                        button.okButton OK 
+                        button.noButton No
+
+            #search-box
+                span SEARCH
+                form#searchBar(action="") 
+                    input#search(type='search' placeholder='搜尋課程名稱、所在城市或簡介' data-search)
+                    img.voice(src="https://frankyeah.github.io/Front-Enter/images/microphone.svg", alt="")
+                    img.search-glass(src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png")
+
+            #black-box
+
+        #nav-upper
+            img.nav-upper-background(src="https://frankyeah.github.io/Front-Enter/images/member-key.jpg", alt="")
+            #profileHeader 會員中心
+            .test-go.test-go-container
+                img.test-go-round(src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png")
+            .testContainer 
+                .testBackground 
+                    .boxContainer  
+                        .testHeader 測驗說明
+                        .testIntro 點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。
+                        .startBtn 開始測驗
+                        .testQuestion 
+                        .testNumber 
+                        ul#testList
+                            li 
+                                input#1.answer(type='radio' name='answer') 
+                                label#1-text(for='1') 
+                            li
+                                input#2.answer(type='radio' name='answer')
+                                label#2-text(for='2')                            
+                            li
+                                input#3.answer(type='radio' name='answer')
+                                label#3-text(for='3')                            
+                            li 
+                                input#4.answer(type='radio' name='answer')
+                                label#4-text(for='4') 
+                            li 
+                                input#5.answer(type='radio' name='answer')
+                                label#5-text(for='5') 
+                        button#newURL 
+                        .pieContainer
+                            .pieChart
+                                .pieNum
+
+        .navCenter
+            .buttonList
+                .line
+                .buttonListDiv
+                    button.personalData 個人資料
+                    button.collectBtn 收藏
+                    button.postManageBtn 貼文管理 
+                    button.logout 登出
+            .displayProfile
+                #inputPhoto 
+                ul#profile(action="")
+                    li 
+                        label#labelName(for="profileName") 名字
+                        input#profileName(type="text", maxlength='30' value="" placeholder='請輸入名字')
+                    li 
+                        label#labelPhone(for="profilePhone") 手機
+                        input#profilePhone(type="text" maxlength='15' value="" placeholder='請輸入電話') 
+                    li 
+                        label#labelEmail(for="profileEmail") 信箱
+                        input#profileEmail(type="text" maxlength='40' value="" placeholder='請輸入信箱')  
+                .modifyBtn
+                    button.modifyData 修改資料
+                    button.modified 確定
+                    button.cancel 取消
+                .dataCollection 
+                template(data-collection)
+                    .collectionBlock 
+                        .collectionImg
+                        .collectionName
+                        .removeBtn
+                .postSystem
+                    .postFirstCol 
+                        .postHeader 文章標題
+                        .postPreface 文章引言
+                        .postTimeStamp 建立時間
+                    .postArea
+                    template#managePost
+                        .postUl
+                            .postHeader N/A
+                            .postPreface N/A
+                            .postTimeStamp N/A
+                    .postBtn
+                        button.createBtn 新增貼文
+                        button.changeBtn 編輯貼文
+                .createPost
+                    .postBtnList
+                        button.createDoneBtn 新增文章
+                        button.saveBtn 儲存修改
+                        button.returnBtn 返回上頁
+                        button.delBtn 刪除貼文
+                    ul#createPostPage 
+                        li  
+                            label#name(for="cName") 課程名字
+                            input#cName(type="text", placeholder='請輸入課程名字')
+                        li 
+                            label#city(for="cCity") 學習城市
+                            input#cCity(type="text", placeholder='請輸入學習城市')
+                        li 
+                            label#skill(for="cSkill") 前／後端
+                            input#cSkill(type="text", placeholder='請輸入前／後端')
+                        li 
+                            label#tech(for="cTech") 所需技術
+                            input#cTech(type="text", placeholder='請輸入所需技術')
+                        li  
+                            label#fee(for="cFee") 每月費用
+                            input#cFee(type="text", placeholder='請輸入每月費用')
+                        li 
+                            label#totalDay(for="cTotalDay") 課程天數
+                            input#cTotalDay(type="text", placeholder='請輸入課程天數')
+                        li 
+                            label#weekHour(for="cWeekHour") 每周時數
+                            input#cWeekHour(type="text", placeholder='請輸入每周時數')
+                        li  
+                            label#classType(for="cClassType") 課程班制
+                            input#cClassType(type="text", placeholder='請輸入課程班制')
+                        li 
+                            label#teachWay(for="cTeachWay") 教學方式
+                            input#cTeachWay(type="text", placeholder='請輸入教學方式')
+                        li 
+                            label#teacherNum(for="cTeacherNum") 老師人數
+                            input#cTeacherNum(type="text", placeholder='請輸入老師人數')
+                        li 
+                            label#foundYear(for="cFoundYear") 成立年份
+                            input#cFoundYear(type="text", placeholder='請輸入成立年份')
+                        li 
+                            label#phone(for="cPhone") 連絡電話
+                            input#cPhone(type="text", placeholder='請輸入連絡電話')
+                        li  
+                            label#mail(for="cMail") 聯絡郵件
+                            input#cMail(type="text", placeholder='請輸入聯絡郵件')
+                        li 
+                            label#topic(for="cTopic") 文章主題
+                            input#cTopic(type="text", placeholder='請輸入文章主題')
+                        li  
+                            label#preface(for="cPreface") 文章引言
+                            input#cPreface(type="text", placeholder='請輸入文章引言')
+                        li.contentLi 
+                            label#content(for="cContent") 課程內文
+                            textarea#cContent(name="", cols="30", rows="10", placeholder='請輸入課程內文') 
+                        li.recLi 
+                            label#recUrl(for="cRecUrl") 長方形圖片
+                            .btn
+                                button.select-file 選擇照片
+                                button.upload-file(disabled) 上傳照片
+                            .image-preview
+                                img
+                            
+                        li.sqLi
+                            label#sqUrl(for="cSqUrl") 方形圖片
+                            .btn
+                                button.select-file 選擇照片
+                                button.upload-file(disabled) 上傳照片
+                            .image-preview
+                                img
+                    
+
+
+        .top
+            #topwrap(onclick="toTop()") 
+                .top-arrow
+                .top-icon 
+                    h3 TOP
+
+        .footer
+            .footer-info
+                a(href="contact.html") 聯絡
+                .num 0918-120-210
+                .mail wendy950210@gmail.com
+            .fb-line
+                a(href="https://www.facebook.com/WendyHsinYun" target="_blank") 
+                    img.fb(src="https://frankyeah.github.io/Front-Enter/images/new-facebook-blue.svg")
+                a(href="https://line.me/ti/p/OBVsxhRD9r" target="_blank") 
+                    img.line(src="https://frankyeah.github.io/Front-Enter/images/FE_line.png")
+
+
+        #animation
+            img#animation-logo(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png", alt="")
+            #animation-blue
+
+
+// pug -w ./pug -o ./html -P

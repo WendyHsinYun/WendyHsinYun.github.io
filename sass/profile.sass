@@ -1,0 +1,1102 @@
+
+$dark-blue: #1cb5e0
+$light-blue: #1ad8d3
+$grey: #737373
+$darkGrey: #808080cc
+  
+*
+    font-family: 微軟正黑體
+    // border: solid 1px #b3b3b3
+
+
+html body
+  padding: 0px
+  margin: 0px
+  box-sizing: border-box
+  background-color: #f0f0f0
+
+.hide
+  display: none
+
+.header 
+  display: flex
+  top: 0
+  z-index: 7
+  position: sticky
+  #headerNav
+    width: 100vw
+    height: 100px
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    background-color: rgba(255, 255, 255, 0.80)
+    .logo:hover
+      transform: scale(1.2)
+      opacity: 0.5
+      cursor: pointer
+    .logo
+      width: 130px
+      margin-left: 50px
+      opacity: 0.8
+      transition: .5s
+
+    nav
+      margin-right: 5%
+      display: flex
+      flex-direction: row
+      width: 40%
+      justify-content: space-around
+      align-items: center
+
+      button:hover
+        color: $light-blue
+        cursor: pointer  
+      button
+        flex-direction: row
+        font-size: 12pt
+        font-weight: 500
+        color: rgb(153, 153, 153)
+        background-color: rgba(0,0,0,0)
+        letter-spacing: 3px
+        border: none
+        white-space: nowrap
+      #click-glass:hover
+        transform: scale(1.2)
+        opacity: 0.5
+        cursor: pointer
+      #click-glass
+        height: 20px
+        width: auto
+        width: 20px
+        cursor: pointer
+        transition: .5s
+  #loginContainer 
+    position: fixed
+    z-index: 9
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    display: none
+    .loginBackground 
+      position: fixed
+      margin-top: 0px
+      background-color: rgba(158, 157, 157, 0.3)
+      width: 100vw
+      height: 100vh
+      top: 0px
+      left: 0px
+      position: fixed
+      display: flex
+      justify-content: center
+      align-items: center
+      align-content: center
+      .loginBox
+        width: 350px
+        height: 430px
+        opacity: 1
+        background-color: white
+        filter: none
+        border-radius: 4px
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        position: relative
+        border: 1px solid #979797
+        transform: translateY(-30px)
+        img.login
+          width: 225px
+          margin-top: 15px
+        form
+          width: 80%
+          display: flex
+          flex-direction: column
+          justify-content: flex-start
+          align-items: center
+          input
+            width: 265px
+            line-height: 25px
+            padding: 5px
+            font-size: 16px
+            letter-spacing: 3px
+            border: 1px solid #979797
+        .forgetPW:hover
+          cursor: pointer
+        .forgetPW
+          width: 100px
+          margin-top: 10px
+          color: $grey
+          letter-spacing: 3px
+          margin-left: 150px
+          word-wrap: nowrap
+        .blueBtn
+          width: 350px
+          display: flex
+          justify-content: center
+          margin-top: 20px
+          button
+            border-radius: 5px
+            font-size: 18px
+            line-height: 35px
+            width: 110px
+            background-color: $light-blue
+            color: white
+            cursor: pointer
+            margin: 15px
+            border: none
+        #loginGmail
+          width: 250px
+          background-color: #d93025
+          border-radius: 5px
+          font-size: 18px
+          line-height: 35px
+          color: white
+          cursor: pointer
+          border: none
+          margin-top: 5px
+    .remindBackground
+      position: fixed
+      margin-top: 0px
+      background-color: rgba(0, 0, 0, 0.5)
+      width: 100vw
+      height: 100vh
+      top: 0px
+      left: 0px
+      position: fixed
+      display: flex
+      justify-content: center
+      align-items: center
+      .remindBox 
+        width: 300px
+        height: 170px
+        transform: translateY(-30px)
+        background-color: white
+        border-radius: 5px
+        letter-spacing: 3px
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        .header
+          font-size: 20px
+          color: $grey
+          margin-top: 25px
+        .content
+          font-size: 16px
+          color: $grey
+          margin-top: 20px
+        button
+          font-size: 16px
+          width: 100px
+          padding: 3px 10px
+          margin-top: 15px
+          color: white
+          background-color: $light-blue
+          border: none
+          border-radius: 3px
+          cursor: pointer
+          display: flex
+          justify-content: center
+          
+
+      
+  #search-box
+    position: absolute
+    background-color: #f0f0f0
+    width: 100vw
+    height: 60vh
+    top: 100px
+    left: 0px
+    display: flex
+    flex-direction: column
+    align-items: center
+    span
+      color: $light-blue
+      margin-top: 45px
+      margin-bottom: 25px
+      letter-spacing: 2px
+      font-size: 15pt
+    #searchBar
+      width: 60%
+      height: 50px
+      background-color: white
+      border-radius: 20px
+      border: none
+      display: flex
+      align-items: center
+      justify-content: space-evenly
+      input#search
+        width: 90%
+        height: 60%
+        border-radius: 10px
+        border: none
+        font-size: 12pt
+        letter-spacing: 2pt
+        padding: 5px
+      input::placeholder
+        color: #929292
+      .voice
+        width: 22px
+        cursor: pointer
+      .search-glass
+        width: 22px
+        cursor: pointer  
+
+        
+  #black-box
+    position: absolute
+    margin-top: 0px
+    background-color: rgba(0,0,0,0.6)
+    width: 100vw
+    height: 30vh
+    top: calc(100px + 60vh)
+    left: 0px
+
+  #search-box, #black-box
+    display: none
+        
+@media screen and (max-width: 1000px)
+  .header
+    #search-box
+      #searchBar
+        input#search
+          width: 80%
+
+@media screen and (max-width: 660px)
+  .header
+    #headerNav
+      .logo
+        margin-left: 15px
+      nav
+        margin-right: 2%
+
+@media screen and (max-width: 520px)
+  .header
+    #headerNav
+      .logo
+        margin-left: 15px
+      nav
+        width: 60%
+
+@media screen and (max-width: 480px)
+  .header
+    #search-box
+      #searchBar
+        width: 90vw
+        input#search
+          width: 80%
+
+
+.nav-center-upper:hover
+  .slogan
+    opacity: 0.5
+
+#nav-upper
+  width: 100vw
+  height: 380px
+  padding: 0px
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  position: relative
+  overflow: hidden
+  .nav-upper-background
+    position: absolute
+    width: 100%
+    opacity: 1
+    transition: opacity 1s
+  #profileHeader
+    position: absolute
+    background-color: $darkGrey
+    border-radius: 8px
+    display: flex
+    justify-content: center
+    align-items: center
+    letter-spacing: 10px
+    color: white
+    font-size: 18pt
+    // font-weight: 650
+    white-space: nowrap 
+    padding: 8px 12px
+  .test-go-container
+    width: 100px
+    height: 100px
+    opacity: 0
+    bottom: 100px
+    right: -10px
+    position: fixed
+    z-index: 6
+    opacity: 0.85
+    animation: testRound 1s 1.5s
+    display: flex
+    justify-content: center
+    align-items: center
+    .test-go-round:hover
+      cursor: pointer
+      opacity: 0.7
+      transform: translateY(-25%)
+    .test-go-round
+      width: 80px
+      transition: transform 1s ease
+
+  .testContainer
+    position: fixed
+    z-index: 9
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    display: none
+    .testBackground 
+      position: fixed
+      margin-top: 0px
+      background-color: rgba(158, 157, 157, 0.1)
+      width: 100vw
+      height: 100vh
+      top: 0px
+      left: 0px
+      position: fixed
+      display: flex
+      justify-content: center
+      align-items: center
+      align-content: center
+      .boxContainer::before
+        background: url('https://frankyeah.github.io/Front-Enter/images/Staff-Selection-.jpg') no-repeat center center/cover
+        filter: grayscale(50%)
+        opacity: .1
+        content: ""
+        display: flex
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        position: absolute
+
+      .boxContainer
+        width: 350px
+        height: 450px
+        opacity: 1
+        background-color: $light-blue
+        filter: none
+        border-radius: 4px
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        position: relative
+        .testHeader
+          position: absolute
+          font-size: 24px
+          font-weight: bold
+          color: white
+          letter-spacing: 3px
+          margin-top: 60px
+        .testIntro
+          position: absolute
+          font-size: 16px
+          color: white
+          letter-spacing: 1px
+          line-height: 30px
+          margin: 120px 50px
+        .startBtn
+          position: absolute
+          font-size: 18px
+          margin-top: 280px
+          padding: 10px 30px
+          border-radius: 8px
+          color: $light-blue
+          background-color: white
+          letter-spacing: 3px
+        .startBtn:hover
+          position: absolute
+          font-size: 18px
+          margin-top: 280px
+          padding: 10px 30px
+          border-radius: 8px
+          background-color: rgba(255, 255, 255, .5)
+          letter-spacing: 3px 
+          color: white
+          cursor: pointer
+        .testQuestion
+          font-size: 18px
+          letter-spacing: 1px
+          line-height: 20px
+          position: absolute
+          margin-top: 40px
+          display: none
+          color: white
+        .testNumber
+          color: rgba(255, 255, 255,.7)
+          letter-spacing: 3px
+          position: absolute
+          margin-top: 90px
+          display: none
+        ul
+          margin-top: 130px
+          list-style-type: none
+          padding: 0
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          display: none
+          li:hover
+            color: white
+            background-color: rgba(256, 256, 256, .5)
+            cursor: pointer
+          li
+            width: 180px
+            font-size: 18px
+            margin-top: 10px
+            border-radius: 5px
+            text-align: center
+            line-height: 40px
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: white
+            color: $light-blue
+            
+            input[type="radio"]
+              opacity: 0
+              position: absolute
+              left: 0
+              top: 0
+              width: 100%
+              border-radius: 10px
+              cursor: pointer
+            label
+              border-radius: 10px
+              width: 100%
+              height: 100%
+              padding: 0
+              margin: 0
+              word-wrap: nowrap
+        button:hover
+          cursor: pointer
+          color: white
+          background-color: rgba(256, 256, 256, .5)
+        button
+          width: 180px
+          background-color: white
+          position: absolute
+          line-height: 40px
+          font-size: 18px
+          color: $light-blue
+          letter-spacing: 3px
+          padding: 5px 0px
+          border-radius: 8px
+          border: none
+          left: 50%
+          top: 75%
+          transform: translateX(-50%)
+          display: flex
+          display: none
+          align-items: center
+          justify-content: center
+        .pieContainer
+          width: 200px
+          height: 200px
+          position: absolute
+          display: flex
+          justify-content: center
+          left: 50%
+          top: 30%
+          transform: translateX(-50%)
+          display: none
+          .pieChart
+            width: 150px
+            height: 150px
+            background-color: $dark-blue
+            border-radius: 100px
+            border: 3px solid white
+            position: absolute
+            .pieNum
+              position: absolute
+              top: 50%
+              left: 50%
+              transform: translate(-50%, -50%)
+              background-color: white
+              width: calc(150px* .85)
+              height: calc(150px* .85)
+              border-radius: 100px
+              font-size: 22pt
+              color: $dark-blue
+              position: absolute
+              display: flex
+              align-items: center
+              justify-content: center
+              z-index: 12
+          .pieChart::before
+            content: ""
+            position: absolute
+            width: 150px
+            height: 75px
+            border-radius: 75px 75px 0px 0px
+            transform-origin: 75px 75px 
+            background-color: var(--before-background-color, transparent)
+            animation: rotate-circle 4s linear
+            transform: rotate(var(--before-rotation, 0deg))
+            
+          .pieChart::after
+            content: ""
+            position: absolute
+            background-color: var(--after-background-color, transparent)
+            width: 150px
+            height: 75px
+            border-radius: 75px 75px 0px 0px
+            transform-origin: 75px 75px 
+            animation: rotate-circle 4s linear
+            transform: rotate(var(--after-rotation, 0deg))
+
+
+@keyframes rotate-circle
+  0%
+    transform: rotate(10deg)
+  10%
+    transform: rotate(40deg)
+  20%
+    transform: rotate(60deg)
+  30%
+    transform: rotate(100deg)
+  40%
+    transform: rotate(150deg)
+  50%
+    transform: rotate(180deg)
+  60%
+    transform: rotate(140deg)
+  70%
+    transform: rotate(110deg)
+  80%
+    transform: rotate(80deg)
+  90%
+    transform: rotate(50deg)
+  100%
+    transform: rotate(20deg)
+  
+
+@keyframes testRound 
+    0% 
+        bottom: 800px
+    100%
+        bottom: 140px
+
+@media screen and (max-width: 580px)
+  #nav-upper
+    height: 380px
+    .nav-upper-background
+      position: absolute
+      width: auto
+      height: 100%
+
+
+.navCenter
+  background-color: white
+  display: flex
+  height: 100%
+  width: 100%
+  flex-direction: row
+  justify-content: center
+  .buttonList 
+    padding: 0px 40px
+    margin-top: 140px
+    display: flex
+    height: 100%
+    flex-direction: column 
+    justify-content: center
+    // border: 1px solid black
+    .buttonListDiv
+      display: flex
+      flex-direction: column 
+      button
+        margin: 15px
+        width: 105px
+        background-color: $light-blue
+        color: white
+        font-size: 16px
+        padding: 8px
+        border-radius: 5px
+        text-align: center
+        border: none
+        letter-spacing: 3px
+        cursor: pointer
+  .displayProfile      
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 650px
+    height: 100%
+    margin-top: 70px
+    // border: 1px solid red
+    #inputPhoto
+      width: 120px
+      height: 120px
+      border-radius: 50%
+    ul#profile
+      list-style-type: none
+      padding: 0
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      color: black 
+      width: auto
+      li 
+        color: $grey
+        font-size: 16px
+        letter-spacing: 3px
+        margin: 15px
+        label
+          margin: 20px
+          opacity: .8
+        input:focus
+          outline: 1.5px solid blue
+        input 
+          font-size: 16px
+          letter-spacing: 3px                
+          border: none
+          padding: 1px
+          width: 300px
+          color: $grey
+          line-height: 30px
+          padding-left: 3px
+          border-radius: 5px 
+        #profileEmail:focus
+          outline: none
+
+    .modifyBtn
+      margin-top: 15px
+      display: flex
+      flex-direction: row
+      // display: none
+      button
+        display: flex
+        justify-content: center
+        width: 95px
+        background-color: $light-blue
+        color: white
+        font-size: 16px
+        padding: 10px
+        white-space: nowrap
+        line-height: 20px
+        border-radius: 5px
+        border: none
+        letter-spacing: 3px
+        cursor: pointer
+      .modified, .cancel
+        display: none
+        margin: 10px
+    .dataCollection
+      // display: flex
+      flex-wrap: wrap
+      justify-content: center
+      display: none
+      .collectionBlock
+        width: 180px
+        height: 240px
+        margin: 10px
+        // display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        display: none
+        .collectionImg:hover
+          cursor: pointer
+          transform: scale(1.12)
+        .collectionImg
+          width: 160px
+          height: 160px
+          border-radius: 5px
+          transition: .6s
+        .collectionName
+          color: $light-blue
+          font-size: 16px
+          line-height: 20px
+          letter-spacing: 1px
+          margin: 10px
+        .removeBtn
+          background: url("https://frankyeah.github.io/Front-Enter/images/rubbish-bin.svg") 0% 0% / cover
+          width: 20px
+          height: 20px
+          cursor: pointer
+
+    .postSystem
+      display: flex
+      flex-direction: column
+      display: none
+      .postFirstCol 
+        display: flex
+        .postHeader, .postPreface, .postTimeStamp
+          color: white
+          background-color: #5f5f5f
+          display: flex
+          justify-content: center
+          align-items: center
+          padding: 10px 10px
+          // border: 1px solid red
+          box-sizing: border-box
+        .postHeader
+          width: 150px
+          white-space: nowrap
+        .postPreface
+          width: 300px
+        .postTimeStamp
+          width: 100px
+      .postArea
+        display: flex
+        flex-direction: column
+        .postUl:hover
+          background-color: #1ad8d259
+          color: #3a3a3a
+        .postUl
+          display: flex
+          justify-content: flex-start
+          color: #5f5f5f
+          list-style-type: none
+          .postHeader, .postPreface, .postTimeStamp
+            cursor: pointer
+            color: #5f5f5f
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 10px 10px
+            border: 1px solid #cfcfcf
+            box-sizing: border-box
+          .postHeader
+            width: 150px
+            white-space: nowrap
+            line-height: 25px
+          .postPreface
+            width: 300px
+          .postTimeStamp
+            width: 100px
+      .postBtn
+        display: flex
+        flex-direction: row
+        justify-content: center
+        width: 100%
+        
+        button:hover
+          background-color: #707070
+        button
+          display: flex
+          justify-content: center
+          width: 95px
+          background-color: #b3b3b3
+          color: white
+          font-size: 16px
+          padding: 10px
+          white-space: nowrap
+          line-height: 20px
+          border-radius: 5px
+          border: none
+          letter-spacing: 3px
+          cursor: pointer
+          margin: 50px
+    .createPost
+      // border: 1px solid red
+      width: 600px
+      display: flex
+      flex-direction: column
+      .postBtnList
+        display: flex
+        display: none
+        flex-direction: row
+        justify-content: center
+        width: 100%
+        button:hover
+          background-color: #707070
+        button
+          display: flex
+          justify-content: center
+          width: 95px
+          background-color: #b3b3b3
+          color: white
+          font-size: 16px
+          padding: 10px
+          white-space: nowrap
+          line-height: 20px
+          border-radius: 5px
+          border: none
+          letter-spacing: 3px
+          cursor: pointer
+          margin: 20px      
+      ul#createPostPage 
+        list-style-type: none
+        padding: 0
+        display: none
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        color: black 
+        width: auto
+        li
+          color: $grey
+          letter-spacing: 3px
+          margin: 15px
+          width: 550px
+          margin-left: 25%
+          label 
+            font-size: 18px
+          input, textarea
+            line-height: 25px
+            font-size: 16px
+            width: 350px
+            margin-left: 10px 
+            padding-left: 8px
+            border-radius: 5px 
+            padding: 5px
+            letter-spacing: 2px
+        .recLi, .sqLi 
+          display: flex
+          flex-direction: row
+          align-items: center
+          margin-bottom: 15px
+          margin-top: 30px
+          label
+            white-space: nowrap
+          .btn
+            display: flex
+            flex-direction: column
+            margin-left: 20px
+            button:hover
+              opacity: .8
+            button 
+              display: flex
+              justify-content: center
+              align-content: center
+              border-radius: 5px
+              font-size: 12px
+              line-height: 35px
+              letter-spacing: 2px
+              width: 80px
+              background-color: $dark-blue
+              color: white
+              cursor: pointer
+              border: none
+              white-space: nowrap
+              margin: 10px
+          .image-preview
+            margin-left: 50px
+        .recLi
+          margin-top: 60px
+        .sqLi 
+          margin-bottom: 100px
+          .btn
+            margin-left: 40px 
+        .contentLi
+          margin-top: 30px
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          #cContent
+            margin-top: 25px
+            width: 450px
+            height: 300px
+            white-space: pre-wrap
+                      
+@media screen and (max-width: 880px)
+  .navCenter
+    flex-direction: column
+    align-items: center
+    
+    width: 100%
+    padding: 60px 0px
+    .buttonList
+      flex-direction: column
+      order: 2
+      width: 100%
+      margin-top: 30px
+      padding: 20px
+      justify-content: flex-start
+      align-items: center
+      .line
+        width: 380px
+        border-top: 1px solid $grey 
+        opacity: .2
+        margin-bottom: 30px
+      .buttonListDiv
+        flex-direction: row
+    .displayProfile
+      .postSystem
+        .postArea
+          border: none
+          display: flex
+          align-items: center
+          .postUl
+            width: auto
+            .postPreface
+              display: none
+
+
+
+@media screen and (max-width: 630px)
+  .navCenter
+    .buttonList
+      .buttonListDiv
+        display: flex
+        flex-direction: column
+        button
+          font-size: 14px
+    .displayProfile
+      #inputPhoto 
+        width: 60px
+        height: 60px
+      ul#profile
+        margin-top: 80px
+        li
+          font-size: 14px
+          label
+            font-size: 14px
+          input
+            font-size: 14px
+      .modifyBtn
+        display: none
+        button
+          font-size: 14px
+
+.top
+  height: 186px
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background-color: white
+
+  #topwrap:hover
+    cursor: pointer
+    transform: scale(1.35)
+  
+  #topwrap
+    transition-duration: 1s
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    border: none
+    width: 100px
+    opacity: 1 
+    .top-arrow
+      border-top: solid 1px $light-blue
+      border-left: solid 1px $light-blue
+      transform: rotate(45deg)
+      width: 10px
+      height: 10px
+
+    .top-icon 
+      transition-duration: 1s
+      border: solid 1px $light-blue
+      border-radius: 30px
+      width: 32px
+      height: 32px
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: center
+      h3
+        font-weight: 250
+        color:$light-blue
+        font-size: 8pt
+
+.footer
+  display: flex
+  flex-direction: row
+  height: 80px
+  background-color: #f0f0f0
+  align-items: center
+  justify-content: space-around
+  margin: 15px
+
+  .footer-info
+    flex-grow: 3
+    letter-spacing: 2pt    
+    font-size: 10pt
+    display: flex
+    justify-content: space-around
+    a 
+      color: $grey
+      text-decoration: none
+    .num
+      color: $grey
+    .num::before
+      content: "M"
+      color: $light-blue
+      
+      letter-spacing: 20px
+
+    .mail
+      color: $grey
+
+    .mail::before
+      content: "E"
+      color: $light-blue
+      
+      letter-spacing: 20px
+  .fb-line    
+    flex-grow: 0.5
+    display: flex
+    justify-content: center
+    
+    img
+      width: 30px
+      margin: 3px
+      opacity: 0.8
+    img:hover
+      cursor: pointer
+      opacity: 0.6
+    
+
+
+@media screen and (max-width: 750px)
+  .footer
+    display: flex
+    height: 150px
+    flex-direction: row
+    align-items: center
+    justify-content: space-around
+
+    .footer-info
+      display: flex
+      flex-direction: column
+      gap: 20px
+      margin-left: 20px
+      
+    .fb-line
+      align-self: end
+      margin-right: 20px
+
+@media screen and (max-width: 390px)
+  .footer
+    flex-direction: row
+    .footer-info, .fb-line
+      transform: scale(0.8)
+      
+    
+#animation
+  position: absolute
+  background-color: rgb(230,230,230)
+  width: 100vw
+  height: 100vh
+  top: 0
+  z-index: 20
+  #animation-logo
+    position: absolute
+    display: flex
+    width: 300px
+    top: 30vh
+    left: 50vw
+    transform: translateX(-50%)
+  #animation-blue
+    position: absolute
+    top: 100vh
+    width: 100vw
+    height: 15vh
+    background-color: $light-blue

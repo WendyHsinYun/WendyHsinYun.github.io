@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡頁面</title>
+    <link rel="stylesheet" href=" ../css/contact.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4poCUfkAs_97yUwR5p00wxVgH7-ncnuM&amp;callback=initMap"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+      emailjs.init("OUQqOz6igY5YaEUO8");
+      })();
+    </script>
+    <script src="../js/login.js"></script>
+    <script src="../js/all.js" defer></script>
+    <script src="../js/contact.js" defer></script>
+  </head>
+  <body> 
+    <div class="header"> 
+      <div id="headerNav"><img class="logo" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png" alt="">
+        <nav>
+          <button id="search-button" type="button">探索</button>
+          <button id="skilltree-button" type="button">技能樹</button>
+          <button id="header-login" type="button">登入</button><img id="click-glass" src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png" alt="">
+        </nav>
+      </div>
+      <div id="loginContainer"> 
+        <div class="loginBackground"> 
+          <div class="loginBox"><img class="login" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-2.png" alt="">
+            <form>
+              <input id="email" type="email" name="email" placeholder="Email" required>
+              <input id="password" type="password" name="password" placeholder="******" required>
+            </form><span class="forgetPW">忘記密碼？</span>
+            <div class="blueBtn">
+              <button id="register">註冊</button>
+              <button id="login">登入</button>
+            </div>
+            <button id="loginGmail">log in with Gmail</button>
+          </div>
+        </div>
+        <div class="remindBackground">
+          <div class="remindBox">
+            <div class="header">Remind </div>
+            <div class="content"> </div>
+            <button class="okButton">OK </button>
+            <button class="noButton">No</button>
+          </div>
+        </div>
+      </div>
+      <div id="search-box"><span>SEARCH</span>
+        <form id="searchBar" action=""> 
+          <input id="search" type="search" placeholder="搜尋課程名稱、所在城市或簡介" data-search><img class="voice" src="https://frankyeah.github.io/Front-Enter/images/microphone.svg" alt=""><img class="search-glass" src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png">
+        </form>
+      </div>
+      <div id="black-box"></div>
+    </div>
+    <div class="info"> 
+      <div class="info-header">技能樹</div>
+      <div class="test-go test-go-container"><img class="test-go-round" src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png"></div>
+      <div class="testContainer"> 
+        <div class="testBackground"> 
+          <div class="boxContainer"> 
+            <div class="testHeader">測驗說明</div>
+            <div class="testIntro">點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。</div>
+            <div class="startBtn">開始測驗</div>
+            <div class="testQuestion">Question Test</div>
+            <div class="testNumber">0/5</div>
+            <ul id="testList"> 
+              <li> 
+                <input class="answer" id="1" type="radio" name="answer">
+                <label id="1-text" for="1">台北</label>
+              </li>
+              <li>
+                <input class="answer" id="2" type="radio" name="answer">
+                <label id="2-text" for="2">台北                           </label>
+              </li>
+              <li>
+                <input class="answer" id="3" type="radio" name="answer">
+                <label id="3-text" for="3">台北                           </label>
+              </li>
+              <li> 
+                <input class="answer" id="4" type="radio" name="answer">
+                <label id="4-text" for="4">台北</label>
+              </li>
+              <li> 
+                <input class="answer" id="5" type="radio" name="answer">
+                <label id="5-text" for="5">台北</label>
+              </li>
+            </ul>
+            <button id="newURL">學校 ABC</button>
+            <div class="pieContainer">
+              <div class="pieChart">
+                <div class="pieNum">20%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="contactInfo">
+        <div class="contactHeader">聯絡我們</div>
+        <div class="intro">想進一步了解我們？歡迎來信與我們聯絡。</div>
+        <form id="contactForm">
+          <input class="name" type="text" name="name" placeholder="名字" required>
+          <input class="email" type="email" name="email" placeholder="信箱" required>
+          <input class="topic" type="text" name="topic" placeholder="信件主旨" required>
+          <textarea id="contactContent" cols="30" rows="10" name="message" placeholder="信件內容"></textarea>
+          <button type="submit">送出</button>
+        </form>
+      </div>
+      <div class="addressInfo">
+        <div class="address"> 
+          <div class="icon"></div>
+          <div class="addressLine">新北市永和區竹林路112號之1號</div>
+        </div>
+        <div id="googleMap"> </div>
+      </div>
+    </div>
+    <div class="top">
+      <div id="topwrap" onclick="toTop()"> 
+        <div class="top-arrow"></div>
+        <div class="top-icon"> 
+          <h3>TOP</h3>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-info"><a href="contact.html">聯絡</a>
+        <div class="num">0918-120-210</div>
+        <div class="mail">wendy950210@gmail.com</div>
+      </div>
+      <div class="fb-line"><a href="https://www.facebook.com/WendyHsinYun" target="_blank"> <img class="fb" src="https://frankyeah.github.io/Front-Enter/images/new-facebook-blue.svg"></a><a href="https://line.me/ti/p/OBVsxhRD9r" target="_blank"> <img class="line" src="https://frankyeah.github.io/Front-Enter/images/FE_line.png"></a></div>
+    </div>
+    <div id="animation"><img id="animation-logo" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png" alt="">
+      <div id="animation-blue"></div>
+    </div>
+  </body>
+</html>
+<!-- pug -w ./pug -o ./html -P-->

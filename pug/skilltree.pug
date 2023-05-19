@@ -1,0 +1,223 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title skilltree
+        link(rel="stylesheet", href=" ../css/skilltree.css")
+        script(src='https://www.gstatic.com/firebasejs/5.5.1/firebase.js')
+        
+        script(src="../js/login.js")
+        script(src="../js/all.js" defer)
+        script(src="../js/skilltree.js" defer)
+        
+    body 
+        .header 
+            #headerNav
+                img.logo(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png", alt="")
+                nav
+                    button#search-button(type="button") 探索
+                    button#skilltree-button(type="button") 技能樹
+                    button#header-login(type="button") 登入
+                    img#click-glass(src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png", alt="")
+
+            #loginContainer 
+                .loginBackground 
+                    .loginBox
+                        img.login(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-2.png", alt="") 
+                        form
+                            input#email(type="email" name="email" placeholder="Email" required)
+                            input#password(type="password" name="password" placeholder="******" required)
+                        span.forgetPW 忘記密碼？
+                        .blueBtn
+                            button#register 註冊
+                            button#login 登入
+                        button#loginGmail log in with Gmail
+                .remindBackground
+                    .remindBox
+                        .header Remind 
+                        .content 
+                        button.okButton OK 
+                        button.noButton No
+                         
+                         
+                    
+
+
+            #search-box
+                span SEARCH
+                form#searchBar(action="") 
+                    input#search(type='search' placeholder='搜尋課程名稱、所在城市或簡介' data-search)
+                    img.voice(src="https://frankyeah.github.io/Front-Enter/images/microphone.svg", alt="")
+                    img.search-glass(src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png")
+            #black-box
+            
+
+
+
+        .info 
+            .info-header 技能樹
+            .test-go.test-go-container
+                img.test-go-round(src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png")
+            .testContainer 
+                .testBackground 
+                    .boxContainer  
+                        .testHeader 測驗說明
+                        .testIntro 點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。
+                        .startBtn 開始測驗
+                        .testQuestion Question Test
+                        .testNumber 0/5
+                        ul#testList 
+                            li 
+                                input#1.answer(type='radio' name='answer') 
+                                label#1-text(for='1') 台北
+                            li
+                                input#2.answer(type='radio' name='answer')
+                                label#2-text(for='2') 台北                           
+                            li
+                                input#3.answer(type='radio' name='answer')
+                                label#3-text(for='3') 台北                           
+                            li 
+                                input#4.answer(type='radio' name='answer')
+                                label#4-text(for='4') 台北
+                            li 
+                                input#5.answer(type='radio' name='answer')
+                                label#5-text(for='5') 台北
+                        button#newURL 學校 ABC
+                        .pieContainer
+                            .pieChart
+                                .pieNum 20%
+
+        .intro 
+            p.intro-header 技能樹說明
+            .bottom-line 
+            p.intro-content 要成為一名稱職的前端，需要學會哪些技能呢？您不仿親自測試看看，自己已掌握了哪些能力。遊戲中，只需點擊按鈕回答問題，答對了，即能接續挑戰。
+
+
+        .main
+            .iconContainer 
+                .iconBackground 
+                    .iconBox
+                        h2 請選擇 icon 
+                        .iconList 
+                            img.cute1(src="https://frankyeah.github.io/Front-Enter/images/cute.svg", alt="")  
+                            img.cute2(src="https://frankyeah.github.io/Front-Enter/images/cute2.svg", alt="")
+                            img.cute3(src="https://frankyeah.github.io/Front-Enter/images/cute3.svg", alt="")
+                            
+
+            .gameContainer 
+                .gameBackground 
+                    .gContainer
+                        span.gameHeader 
+                        button.firstAns 
+                        button.secondAns 
+                        button.thirdAns
+                        .gArrow
+                .displayBackground 
+                    .dContainer 
+                        p
+            .leftBlock
+                .block.cssBlock 
+                    p CSS
+                    br
+                    | 層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），是一種用來為結構化文件（如 HTML 文件或 XML 應用）添加樣式（字型、間距和顏色等）的電腦語言。
+                .block.jqueryBlock 
+                    p jQuery
+                    br
+                    | jQuery 是一套跨瀏覽器的 JavaScript 函式庫，簡化 HTML 與 JavaScript 之間的操作。
+                .block.scssBlock 
+                    p SCSS
+                    br
+                    | Sass 是一個將指令碼解析成 CSS 的手稿語言，即 SassScript。Sass 包括兩套語法。最開始的語法叫做「縮排語法」，使用縮排來區分程式碼塊，並且用換行將不同規則分隔開。而較新的語法叫做「SCSS」。
+                .block.bootstrapBlock 
+                    p Bootstrap
+                    br
+                    | Bootstrap 是一組用於網站和網路應用程式開發的開源前端框架，提供字體排印、表單、按鈕、導航及其他各種元件及 Javascript 擴充套件，旨在使動態網頁和 Web 應用的開發更加容易。
+            .centerBlock
+                .box-evenly
+                    .user-icon
+                .box-evenly 
+                    .html.greyBorder HTML
+                .box-left.line1
+                    .slash
+                .box-evenly.line2
+                    .css.greyBorder CSS 
+                    .horiz
+                    .js.greyBorder JS
+                .box-right.line3
+                    .slash
+                    .pipe
+                .box-evenly
+                    .jquery.greyBorder jQuery 
+                    .rwd.greyBorder RWD
+                .box-right-second.line4
+                    .slash
+                .box-evenly
+                    .github.greyBorder GitHub
+                .box-evenly.line5
+                    .slash
+                    .backslash
+                .box-evenly
+                    .scss.greyBorder SCSS
+                    .webpack.greyBorder Webpack
+                .box-evenly-eighth.line6
+                    .pipe.pipe-one 
+                    .pipe.pipe-two
+                .box-evenly
+                    .bootstrap.greyBorder Bootstrap
+                    .react.greyBorder React
+                .box-right-tenth.line7
+                    .slash
+                .box-evenly
+                    .unitTest.greyBorder Unit Test
+            .rightBlock
+                .block.htmlBlock 
+                    p HTML 
+                    br
+                    | 超文件標示語言（英語：HyperText Markup Language，簡稱：HTML）是一種用於建立網頁的標準標示語言。 
+                .block.jsBlock 
+                    p JavaScript 
+                    br
+                    | JavaScript 是一門基於原型、函式先行的語言，是一門多範式的語言，它支援物件導向編程，指令式程式設計，以及函數語言程式設計。
+                .block.rwdBlock
+                    p RWD 
+                    br
+                    | 響應式網頁設計（英語：Responsive web design，通常縮寫為 RWD），是一種網頁設計的技術做法，該設計可使網站在不同的裝置上瀏覽時，對應不同解析度皆有適合的呈現，減少使用者進行縮放、平移和捲動等操作行為。
+                .block.githubBlock
+                    p GitHub
+                    br
+                    | GitHub 是透過 Git 進行版本控制的軟體原始碼代管服務，由 GitHub 公司（曾稱 Logical Awesome）開發者使用 Ruby on Rails 編寫而成。
+                .block.webpackBlock 
+                    p Webpack
+                    br
+                    | Webpack 是一個開源的前端打包工具。Webpack 提供了前端開發缺乏的模組化開發方式，將各種靜態資源視為模組，並從它生成優化過的程式碼。
+                .block.reactBlock 
+                    p React 
+                    br
+                    | React 是一個為資料提供彩現為 HTML 視圖的開源 JavaScript 庫。React 視圖通常採用包含以自訂 HTML 標記規定的其他元件的元件彩現。
+                .block.unitTestBlock
+                    p Unit Test
+                    br
+                    | 在電腦編程中，單元測試（英語：Unit Testing）又稱為模組測試，是針對程式模組（軟體設計的最小單位）來進行正確性檢驗的測試工作。程式單元是應用的最小可測試部件。
+        .top
+            #topwrap(onclick="toTop()") 
+                .top-arrow
+                .top-icon 
+                    h3 TOP
+
+        .footer
+            .footer-info
+                a(href="contact.html") 聯絡
+                .num 0918-120-210
+                .mail wendy950210@gmail.com
+            .fb-line
+                a(href="https://www.facebook.com/WendyHsinYun" target="_blank") 
+                    img.fb(src="https://frankyeah.github.io/Front-Enter/images/new-facebook-blue.svg")
+                a(href="https://line.me/ti/p/OBVsxhRD9r" target="_blank") 
+                    img.line(src="https://frankyeah.github.io/Front-Enter/images/FE_line.png")
+
+
+        #animation
+            img#animation-logo(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png", alt="")
+            #animation-blue

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員中心</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/all.js" defer></script>
+    <script src="../js/profile.js" defer></script>
+    <script src="../js/article.js" defer></script>
+  </head>
+  <body> 
+    <div class="header"> 
+      <div id="headerNav"><img class="logo" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png" alt="">
+        <nav>
+          <button id="search-button" type="button">探索</button>
+          <button id="skilltree-button" type="button">技能樹</button>
+          <button id="header-login" type="button">登入</button><img id="click-glass" src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png" alt="">
+        </nav>
+      </div>
+      <div id="loginContainer"> 
+        <div class="loginBackground"> 
+          <div class="loginBox"><img class="login" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-2.png" alt="">
+            <form id="login">
+              <input id="email" type="email" name="email" placeholder="Email" required>
+              <input id="password" type="password" name="password" placeholder="******" required>
+            </form><span class="forgetPW">忘記密碼？</span>
+            <div class="blueBtn">
+              <button id="register">註冊</button>
+              <button id="login">登入</button>
+            </div>
+            <button id="loginGmail">log in with Gmail</button>
+          </div>
+        </div>
+        <div class="remindBackground">
+          <div class="remindBox">
+            <div class="header">Remind </div>
+            <div class="content"> </div>
+            <button class="okButton">OK </button>
+            <button class="noButton">No</button>
+          </div>
+        </div>
+      </div>
+      <div id="search-box"><span>SEARCH</span>
+        <form id="searchBar" action=""> 
+          <input id="search" type="search" placeholder="搜尋課程名稱、所在城市或簡介" data-search><img class="voice" src="https://frankyeah.github.io/Front-Enter/images/microphone.svg" alt=""><img class="search-glass" src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png">
+        </form>
+      </div>
+      <div id="black-box"></div>
+    </div>
+    <div id="nav-upper"><img class="nav-upper-background" src="https://frankyeah.github.io/Front-Enter/images/member-key.jpg" alt="">
+      <div id="profileHeader">會員中心</div>
+      <div class="test-go test-go-container"><img class="test-go-round" src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png"></div>
+      <div class="testContainer"> 
+        <div class="testBackground"> 
+          <div class="boxContainer"> 
+            <div class="testHeader">測驗說明</div>
+            <div class="testIntro">點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。</div>
+            <div class="startBtn">開始測驗</div>
+            <div class="testQuestion"> </div>
+            <div class="testNumber"> </div>
+            <ul id="testList">
+              <li> 
+                <input class="answer" id="1" type="radio" name="answer">
+                <label id="1-text" for="1"> </label>
+              </li>
+              <li>
+                <input class="answer" id="2" type="radio" name="answer">
+                <label id="2-text" for="2">                           </label>
+              </li>
+              <li>
+                <input class="answer" id="3" type="radio" name="answer">
+                <label id="3-text" for="3">                           </label>
+              </li>
+              <li> 
+                <input class="answer" id="4" type="radio" name="answer">
+                <label id="4-text" for="4"> </label>
+              </li>
+              <li> 
+                <input class="answer" id="5" type="radio" name="answer">
+                <label id="5-text" for="5"> </label>
+              </li>
+            </ul>
+            <button id="newURL"> </button>
+            <div class="pieContainer">
+              <div class="pieChart">
+                <div class="pieNum"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navCenter">
+      <div class="buttonList">
+        <div class="line"></div>
+        <div class="buttonListDiv">
+          <button class="personalData">個人資料</button>
+          <button class="collectBtn">收藏</button>
+          <button class="postManageBtn">貼文管理 </button>
+          <button class="logout">登出</button>
+        </div>
+      </div>
+      <div class="displayProfile">
+        <div id="inputPhoto"> </div>
+        <ul id="profile" action="">
+          <li> 
+            <label id="labelName" for="profileName">名字</label>
+            <input id="profileName" type="text" maxlength="30" value="" placeholder="請輸入名字">
+          </li>
+          <li> 
+            <label id="labelPhone" for="profilePhone">手機</label>
+            <input id="profilePhone" type="text" maxlength="15" value="" placeholder="請輸入電話">
+          </li>
+          <li> 
+            <label id="labelEmail" for="profileEmail">信箱</label>
+            <input id="profileEmail" type="text" maxlength="40" value="" placeholder="請輸入信箱">
+          </li>
+        </ul>
+        <div class="modifyBtn">
+          <button class="modifyData">修改資料</button>
+          <button class="modified">確定</button>
+          <button class="cancel">取消</button>
+        </div>
+        <div class="dataCollection"> </div>
+        <template data-collection>
+          <div class="collectionBlock"> 
+            <div class="collectionImg"></div>
+            <div class="collectionName"></div>
+            <div class="removeBtn"></div>
+          </div>
+        </template>
+        <div class="postSystem">
+          <div class="postFirstCol"> 
+            <div class="postHeader">文章標題</div>
+            <div class="postPreface">文章引言</div>
+            <div class="postTimeStamp">建立時間</div>
+          </div>
+          <div class="postArea"></div>
+          <template id="managePost">
+            <div class="postUl">
+              <div class="postHeader">N/A</div>
+              <div class="postPreface">N/A</div>
+              <div class="postTimeStamp">N/A</div>
+            </div>
+          </template>
+          <div class="postBtn">
+            <button class="createBtn">新增貼文</button>
+            <button class="changeBtn">編輯貼文</button>
+          </div>
+        </div>
+        <div class="createPost">
+          <div class="postBtnList">
+            <button class="createDoneBtn">新增文章</button>
+            <button class="saveBtn">儲存修改</button>
+            <button class="returnBtn">返回上頁</button>
+            <button class="delBtn">刪除貼文</button>
+          </div>
+          <ul id="createPostPage"> 
+            <li> 
+              <label id="name" for="cName">課程名字</label>
+              <input id="cName" type="text" placeholder="請輸入課程名字">
+            </li>
+            <li> 
+              <label id="city" for="cCity">學習城市</label>
+              <input id="cCity" type="text" placeholder="請輸入學習城市">
+            </li>
+            <li> 
+              <label id="skill" for="cSkill">前／後端</label>
+              <input id="cSkill" type="text" placeholder="請輸入前／後端">
+            </li>
+            <li> 
+              <label id="tech" for="cTech">所需技術</label>
+              <input id="cTech" type="text" placeholder="請輸入所需技術">
+            </li>
+            <li> 
+              <label id="fee" for="cFee">每月費用</label>
+              <input id="cFee" type="text" placeholder="請輸入每月費用">
+            </li>
+            <li> 
+              <label id="totalDay" for="cTotalDay">課程天數</label>
+              <input id="cTotalDay" type="text" placeholder="請輸入課程天數">
+            </li>
+            <li> 
+              <label id="weekHour" for="cWeekHour">每周時數</label>
+              <input id="cWeekHour" type="text" placeholder="請輸入每周時數">
+            </li>
+            <li> 
+              <label id="classType" for="cClassType">課程班制</label>
+              <input id="cClassType" type="text" placeholder="請輸入課程班制">
+            </li>
+            <li> 
+              <label id="teachWay" for="cTeachWay">教學方式</label>
+              <input id="cTeachWay" type="text" placeholder="請輸入教學方式">
+            </li>
+            <li> 
+              <label id="teacherNum" for="cTeacherNum">老師人數</label>
+              <input id="cTeacherNum" type="text" placeholder="請輸入老師人數">
+            </li>
+            <li> 
+              <label id="foundYear" for="cFoundYear">成立年份</label>
+              <input id="cFoundYear" type="text" placeholder="請輸入成立年份">
+            </li>
+            <li> 
+              <label id="phone" for="cPhone">連絡電話</label>
+              <input id="cPhone" type="text" placeholder="請輸入連絡電話">
+            </li>
+            <li> 
+              <label id="mail" for="cMail">聯絡郵件</label>
+              <input id="cMail" type="text" placeholder="請輸入聯絡郵件">
+            </li>
+            <li> 
+              <label id="topic" for="cTopic">文章主題</label>
+              <input id="cTopic" type="text" placeholder="請輸入文章主題">
+            </li>
+            <li> 
+              <label id="preface" for="cPreface">文章引言</label>
+              <input id="cPreface" type="text" placeholder="請輸入文章引言">
+            </li>
+            <li class="contentLi"> 
+              <label id="content" for="cContent">課程內文</label>
+              <textarea id="cContent" name="" cols="30" rows="10" placeholder="請輸入課程內文"> </textarea>
+            </li>
+            <li class="recLi"> 
+              <label id="recUrl" for="cRecUrl">長方形圖片</label>
+              <div class="btn">
+                <button class="select-file">選擇照片</button>
+                <button class="upload-file" disabled>上傳照片</button>
+              </div>
+              <div class="image-preview"><img></div>
+            </li>
+            <li class="sqLi">
+              <label id="sqUrl" for="cSqUrl">方形圖片</label>
+              <div class="btn">
+                <button class="select-file">選擇照片</button>
+                <button class="upload-file" disabled>上傳照片</button>
+              </div>
+              <div class="image-preview"><img></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="top">
+      <div id="topwrap" onclick="toTop()"> 
+        <div class="top-arrow"></div>
+        <div class="top-icon"> 
+          <h3>TOP</h3>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-info"><a href="contact.html">聯絡</a>
+        <div class="num">0918-120-210</div>
+        <div class="mail">wendy950210@gmail.com</div>
+      </div>
+      <div class="fb-line"><a href="https://www.facebook.com/WendyHsinYun" target="_blank"> <img class="fb" src="https://frankyeah.github.io/Front-Enter/images/new-facebook-blue.svg"></a><a href="https://line.me/ti/p/OBVsxhRD9r" target="_blank"> <img class="line" src="https://frankyeah.github.io/Front-Enter/images/FE_line.png"></a></div>
+    </div>
+    <div id="animation"><img id="animation-logo" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png" alt="">
+      <div id="animation-blue"></div>
+    </div>
+  </body>
+</html>
+<!-- pug -w ./pug -o ./html -P-->

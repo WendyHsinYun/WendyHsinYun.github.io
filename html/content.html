@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <link rel="stylesheet" href="../css/content.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/content.js" defer></script>
+    <script src="../js/all.js" defer></script>
+  </head>
+  <body> 
+    <div class="header"> 
+      <div id="headerNav"><img class="logo" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png" alt="">
+        <nav>
+          <button id="search-button" type="button">探索</button>
+          <button id="skilltree-button" type="button">技能樹</button>
+          <button id="header-login" type="button">登入</button><img id="click-glass" src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png" alt="">
+        </nav>
+      </div>
+      <div id="loginContainer"> 
+        <div class="loginBackground"> 
+          <div class="loginBox"><img class="login" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-2.png" alt="">
+            <form>
+              <input id="email" type="email" name="email" placeholder="Email" required>
+              <input id="password" type="password" name="password" placeholder="******" required>
+            </form><span class="forgetPW">忘記密碼？</span>
+            <div class="blueBtn">
+              <button id="register">註冊</button>
+              <button id="login">登入</button>
+            </div>
+            <button id="loginGmail">log in with Gmail</button>
+          </div>
+        </div>
+        <div class="remindBackground">
+          <div class="remindBox">
+            <div class="header">Remind </div>
+            <div class="content"> </div>
+            <button class="okButton">OK </button>
+            <button class="noButton">No</button>
+          </div>
+        </div>
+      </div>
+      <div id="search-box"><span>SEARCH</span>
+        <form id="searchBar" action=""> 
+          <input id="search" type="search" placeholder="搜尋課程名稱、所在城市或簡介" data-search><img class="voice" src="https://frankyeah.github.io/Front-Enter/images/microphone.svg" alt=""><img class="search-glass" src="https://frankyeah.github.io/Front-Enter/images/FE_search_green.png">
+        </form>
+      </div>
+      <div id="black-box"></div>
+    </div>
+    <div id="nav-upper"><img class="nav-upper-background" src="" alt="">
+      <div class="className"> </div>
+      <div class="test-go test-go-container"><img class="test-go-round" src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png"></div>
+      <div class="testContainer"> 
+        <div class="testBackground"> 
+          <div class="boxContainer"> 
+            <div class="testHeader">測驗說明</div>
+            <div class="testIntro">點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。</div>
+            <div class="startBtn">開始測驗</div>
+            <div class="testQuestion"> </div>
+            <div class="testNumber"> </div>
+            <ul id="testList"> 
+              <li> 
+                <input class="answer" id="1" type="radio" name="answer">
+                <label id="1-text" for="1"> </label>
+              </li>
+              <li>
+                <input class="answer" id="2" type="radio" name="answer">
+                <label id="2-text" for="2">                           </label>
+              </li>
+              <li>
+                <input class="answer" id="3" type="radio" name="answer">
+                <label id="3-text" for="3">                           </label>
+              </li>
+              <li> 
+                <input class="answer" id="4" type="radio" name="answer">
+                <label id="4-text" for="4"> </label>
+              </li>
+              <li> 
+                <input class="answer" id="5" type="radio" name="answer">
+                <label id="5-text" for="5"> </label>
+              </li>
+            </ul>
+            <button id="newURL"> </button>
+            <div class="pieContainer">
+              <div class="pieChart">
+                <div class="pieNum"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navCenter">
+      <div class="navCenterLeft"> 
+        <div class="leftImg leftImgOne">         </div>
+        <div class="leftImg leftImgTwo"> </div>
+        <div class="leftImg leftImgThree"> </div>
+        <div class="leftImg leftImgFour">       </div>
+        <div class="leftImg leftImgFive"></div>
+        <div class="popUpImgContainer">
+          <div class="popUpImgBackgroud">
+            <div class="TriLeft">
+              <div class="popUpTriLeft"></div>
+            </div>
+            <div class="popUpImg"></div>
+            <div class="TriRight">
+              <div class="popUpTriRight"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navCenterRight"> 
+        <div class="mainContent"> 
+          <div id="mainContentText">
+            <div id="mainTitle">JavaScript 程式設計再進階</div>
+            <p><br>飛肯設計學苑是國內知名前端學校，教導各式前端技術，其中的JavaScript 是目前最熱門的程式語言之一，不管在前端或是後端都有一席之地，因此徹底深入了解這個語言核心是絕對有必要的。<br><br>本課程的教學將分為「語法介紹」、「語言特性」、「寫作風格」、「物件導向」、「物件繼承」及「設計模式」六大教學主題。使用原生方法深入了解，從語法介紹與語言特性的基礎概念重新開始，並且了解 JavaScript 不同於其它程式語言獨特的一面。再談到寫作風格與物件導向，保持良好的開發習慣並且善用物件導向的概念進行開發，在開發的過程中更能夠減少程式發生問題。了解物件繼承的特性與實作方法，讓程式碼在大型架構底下更容易維護。最後透過各種不同的設計模式解決複雜架構會遇到的問題。<br><br>學習 JavaScript OOP 物件導向就像是開手排車一樣，更能充分的了解原理與技巧，就如同享受開手排車的駕馭感與操控樂趣。<br><br>另一門前端必學的語言－CSS，層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表，一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。目前最新版本是CSS2.1，為W3C的推薦標準。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。<br><br>CSS不能單獨使用，必須與HTML或XML一起協同工作，為HTML或XML起裝飾作用。本文主要介紹用於裝飾HTML網頁的CSS技術。其中HTML負責確定網頁中有哪些內容，CSS確定以何種外觀（大小、粗細、顏色、對齊和位置）展現這些元素。CSS可以用於設定頁面布局、設定頁面元素樣式、設定適用於所有網頁的全局樣式。CSS可以零散地直接添加在要應用樣式的網頁元素上，也可以集中化內建於網頁、連結式引入網頁以及匯入式引入網頁。</p>
+          </div>
+          <div id="boxTitle"> 
+            <p>整理</p>
+            <div class="underline"></div>
+          </div>
+          <div id="boxTable">
+            <div class="row"> 
+              <div class="row-left">城市</div>
+              <div class="row-right city"></div>
+            </div>
+            <div class="row">
+              <div class="row-left">班制</div>
+              <div class="row-right classType"></div>
+            </div>
+            <div class="row">
+              <div class="row-left">教法</div>
+              <div class="row-right teachType"> </div>
+            </div>
+            <div class="row">
+              <div class="row-left">天數</div>
+              <div class="row-right totalDay"> </div>
+            </div>
+            <div class="row">
+              <div class="row-left">週時</div>
+              <div class="row-right weekHour"> </div>
+            </div>
+            <div class="row">
+              <div class="row-left">技術</div>
+              <div class="row-right tech"></div>
+            </div>
+            <div class="row">
+              <div class="row-left">信箱</div>
+              <div class="row-right mail"> </div>
+            </div>
+            <div class="row">
+              <div class="row-left">電話</div>
+              <div class="row-right phone"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top">
+      <div id="topwrap" onclick="toTop()"> 
+        <div class="top-arrow"></div>
+        <div class="top-icon"> 
+          <h3>TOP</h3>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-info"><a href="contact.html">聯絡</a>
+        <div class="num">0918-120-210</div>
+        <div class="mail">wendy950210@gmail.com</div>
+      </div>
+      <div class="fb-line"><a href="https://www.facebook.com/WendyHsinYun" target="_blank"> <img class="fb" src="https://frankyeah.github.io/Front-Enter/images/new-facebook-blue.svg"></a><a href="https://line.me/ti/p/OBVsxhRD9r" target="_blank"> <img class="line" src="https://frankyeah.github.io/Front-Enter/images/FE_line.png"></a></div>
+    </div>
+    <div id="animation"><img id="animation-logo" src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png" alt="">
+      <div id="animation-blue"></div>
+    </div>
+  </body>
+</html>
+<!-- pug -w ./pug -o ./html -P-->
